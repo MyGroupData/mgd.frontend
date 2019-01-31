@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BffService} from '../bff.service'
-import { IUserData } from '../IUSerData';
+import { IUserData } from '../IUserData';
 
 @Component({
   selector: 'app-update-user',
