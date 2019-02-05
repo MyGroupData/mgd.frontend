@@ -8,6 +8,7 @@ import { ShowUsersComponent } from './show-users/show-users.component';
 import {BffService} from './bff.service'
 import {WINDOW_PROVIDERS} from './WindowProvider'
 import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [BffService,WINDOW_PROVIDERS],
   bootstrap: [AppComponent]

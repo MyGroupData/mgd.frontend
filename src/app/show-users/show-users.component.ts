@@ -3,15 +3,29 @@ import {BffService} from '..//bff.service'
 
 @Component({
  selector: 'app-show-users',
- template: `<h2  *ngIf="true">
- Name is now: {{data}}
-           </h2>
+ template: `
            <br>
+            <button type="button" class="btn btn-secondary" placement="top" ngbTooltip="Get Users" (click)=onClickGetUsers()>
+            Get Users
+            </button>
            <br>
-           <button (click)=onClickGetUsers()>Get Users</button>
-           <div *ngFor="let user of users">
-             <h2>{{user.name}}, {{user.birthday}}</h2>
-           </div>
+           <br>      
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Birthday</th>
+              </tr>
+            </thead>
+              <tbody>
+                <tr *ngFor="let user of users; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.birthday }}</td>
+                </tr>
+              </tbody>
+        </table>
            `,
  styles: []
 })
